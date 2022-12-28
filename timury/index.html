@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DeadLine Driven Timer</title>
+    <link rel="next" href="test_name.html" />
+
+    <link rel="stylesheet" type="text/css" media="all">
+  <!--  <script type="text/javascript" src="main.js"></script>  -->
+</head>
+
+<body>
+
+    <p>DeadLine Driven Timer</p>
+
+    <form action="./test_name.html" method="get" name="mainForm">
+        目標時間：<input type="text" name="sendText" id="sendText" value="目標時時間まで"><br>
+
+        :<input type="datetime-local" id="year" value="2022-12-19T00:00"><br>
+    </form>
+    <script>
+        const redirect = () => {
+            document.getElementById('year');
+            const a = document.getElementById('year');
+            const value = a.valueAsNumber
+            console.log(value);
+
+            document.getElementById("sendText");
+            const b = document.getElementById("sendText");
+            const values = b.value
+            console.log(values);
+
+            location.href = `./test_name.html?deadline=${value}&data=${values}`
+        }
+
+    </script>
+</body>
+</html>
+
+<!-- test_name.htmlへ遷移 -->
+<input type="button" id="button" onclick="redirect()" value="現在時刻との差を求める" onchange="updateUIOfCountdown()">
